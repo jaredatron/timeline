@@ -1,0 +1,19 @@
+# OS X
+.DS_Store
+
+# Logs
+logs
+*.log
+
+# Compiled Dirs (http://nodejs.org/api/addons.html)
+dist/
+
+# Dependency directories
+node_modules/
+
+# temp files
+tmp/
+
+.eslintcache
+
+
