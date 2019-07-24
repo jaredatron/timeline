@@ -1,5 +1,9 @@
-const ROOT = path.resolve(__dirname)
+const path = require('path')
 const webpack = require('webpack')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
+const ROOT = path.resolve(__dirname)
 const NODE_ENV = process.env.NODE_ENV
 const development = NODE_ENV === 'development'
 const production = NODE_ENV === 'production'
@@ -62,4 +66,11 @@ module.exports = {
       },
     ]
   },
+  plugins: [
+    // empty out the dist directroy before rebuild
+    new CleanWebpackPlugin({
+      verbose: true,
+      watch: true,
+    }),
+  ],
 }
